@@ -29,7 +29,7 @@ export class IndexComponent implements OnInit {
 
   onScroll() {
     this.page++;
-      this.ObtenerPosts();
+    this.ObtenerPosts();
   }
 
 }
