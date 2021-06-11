@@ -9,6 +9,7 @@ import { PostServiceService } from 'src/app/service/post-service.service';
 export class IndexComponent implements OnInit {
 
   resPosts:any;
+  page: number = 1;
   constructor(private data:PostServiceService) { 
     this.resPosts=[];
   }
@@ -26,11 +27,9 @@ export class IndexComponent implements OnInit {
     });
   }
 
-  add40lines() {
-    let lineCounter = this.resPosts.length;
-    for (let i = 0; i < 40; i ++) {
-      lineCounter ++;
-    }
+  onScroll() {
+    this.page++;
+      this.ObtenerPosts();
   }
 
 }
