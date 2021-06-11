@@ -23,7 +23,6 @@ export class IndexComponent implements OnInit {
     this.data
     .obtenerPosts()
     .subscribe((resP:any) => {
-      console.log(resP);
       this.resPosts=resP.slice(0,this.limit);
     });
   }
@@ -31,10 +30,8 @@ export class IndexComponent implements OnInit {
   onScroll() {
     if(this.limit<100){
       this.limit+=20;
-      console.log("entro");
     }
     this.ObtenerPosts();
-    console.log("no entro");
   }
 
 }

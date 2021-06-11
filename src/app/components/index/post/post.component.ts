@@ -30,7 +30,6 @@ export class PostComponent implements OnInit {
       this.data
         .obtenerComments(id)
         .subscribe((res:any) => {
-          console.log(res);
           this.resComment=res;
         });
     }
