@@ -1,0 +1,15 @@
+<h3 class="card-header">{{title}}</h3>
+<div class="card-body">
+    <p class="card-text">{{body}}</p>
+    
+    
+    <button (click)="ObtenerComment(id)" class="btn btn-primary">Comments</button>
+    <br>
+    <br>
+    <div *ngIf="ocultar" >
+        <ul *ngFor="let rc of resComment" class="card">
+            <comment-component name="{{rc.name}}" email="{{rc.email}}" body="{{rc.body}}"></comment-component>
+        </ul>
+    </div>
+        
+</div>

@@ -1,0 +1,7 @@
+
+<div>
+    <h1 class="card-title">Posts</h1>
+    <div *ngFor="let rp of resPosts" class="card">
+        <post-component body="{{rp.body}}" id="{{rp.id}}" title="{{rp.title}}" class="post"></post-component>
+    </div>
+</div>
