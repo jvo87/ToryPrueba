@@ -9,9 +9,10 @@ import { PostServiceService } from 'src/app/service/post-service.service';
 export class IndexComponent implements OnInit {
 
   resPosts:any;
-  page: number = 1;
+  limit:number;
   constructor(private data:PostServiceService) { 
     this.resPosts=[];
+    this.limit=20;
   }
 
   ngOnInit(): void {
@@ -23,13 +24,17 @@ export class IndexComponent implements OnInit {
     .obtenerPosts()
     .subscribe((resP:any) => {
       console.log(resP);
-      this.resPosts=resP;
+      this.resPosts=resP.slice(0,this.limit);
     });
   }
 
   onScroll() {
-    this.page++;
+    if(this.limit<100){
+      this.limit+=20;
+      console.log("entro");
+    }
     this.ObtenerPosts();
+    console.log("no entro");
   }
 
 }
